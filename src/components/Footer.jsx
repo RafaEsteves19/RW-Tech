@@ -11,7 +11,9 @@ function Footer() {
     { path: '/', label: 'Home' },
     { path: '/reviews', label: 'Reviews & Produtos' },
     { path: '/about', label: 'Sobre' },
-    { path: '/contact', label: 'Contato' }
+    { path: '/contact', label: 'Contato' },
+    { path: "/contact#faq", label: "Perguntas Frequentes" }
+
   ]
 
   const socialLinks = [

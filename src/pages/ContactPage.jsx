@@ -8,14 +8,18 @@ import emailjs from '@emailjs/browser';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import Toast from '../components/Toast.jsx';
+import CustomSelect from "../components/CustomSelect";
+import FAQ from "../components/FAQ";
 
 import './ContactPage.css';
 
 function ContactPage() {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
+    customSubject: '',
     message: ''
   });
 
@@ -28,6 +32,7 @@ function ContactPage() {
   }
 
   function handleChange(e) {
+
     const { name, value } = e.target;
 
     setFormData(prev => ({
@@ -39,50 +44,86 @@ function ContactPage() {
       ...prev,
       [name]: null
     }));
+
   }
 
   function validateForm() {
+
     const newErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Nome obrigatório';
+    if (!formData.name.trim())
+      newErrors.name = 'Nome obrigatório';
 
     if (!formData.email.trim()) {
+
       newErrors.email = 'Email obrigatório';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+
+    } else if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    ) {
+
       newErrors.email = 'Email inválido';
+
     }
 
-    if (!formData.subject.trim()) newErrors.subject = 'Assunto obrigatório';
+    if (!formData.subject.trim())
+      newErrors.subject = 'Assunto obrigatório';
+
+    if (
+      formData.subject === 'Outro' &&
+      !formData.customSubject.trim()
+    ) {
+
+      newErrors.customSubject = 'Informe o assunto';
+
+    }
 
     if (!formData.message.trim()) {
+
       newErrors.message = 'Mensagem obrigatória';
+
     } else if (formData.message.length < 10) {
+
       newErrors.message = 'Mensagem muito curta';
+
     }
 
     setErrors(newErrors);
+
     return Object.keys(newErrors).length === 0;
+
   }
 
   async function handleSubmit(e) {
+
     e.preventDefault();
 
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
+    const finalSubject =
+      formData.subject === 'Outro'
+        ? formData.customSubject
+        : formData.subject;
+
     try {
+
       await emailjs.send(
+
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+
         {
           name: formData.name,
           email: formData.email,
-          title: formData.subject,
+          title: finalSubject,
           message: formData.message,
           time: new Date().toLocaleString('pt-BR')
         },
+
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
       );
 
       showToast(
@@ -95,10 +136,12 @@ function ContactPage() {
         name: '',
         email: '',
         subject: '',
+        customSubject: '',
         message: ''
       });
 
     } catch (error) {
+
       console.error(error);
 
       showToast(
@@ -106,9 +149,13 @@ function ContactPage() {
         'Erro ao enviar',
         'Não foi possível enviar sua mensagem. Tente novamente.'
       );
+
     } finally {
+
       setIsSubmitting(false);
+
     }
+
   }
 
   return (
@@ -179,11 +226,12 @@ function ContactPage() {
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="grid-2">
                 <div>
-                  <label>Nome</label>
+                  <label>Nome Completo</label>
                   <input
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    placeholder="Digite seu nome completo"
                   />
                   {errors.name && <span>{errors.name}</span>}
                 </div>
@@ -194,19 +242,64 @@ function ContactPage() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    placeholder="seuemail@exemplo.com"
                   />
                   {errors.email && <span>{errors.email}</span>}
                 </div>
               </div>
 
               <div>
+
                 <label>Assunto</label>
-                <input
-                  name="subject"
+
+                <CustomSelect
                   value={formData.subject}
-                  onChange={handleChange}
+                  onChange={(value) =>
+                    setFormData(prev => ({
+                      ...prev,
+                      subject: value,
+                      customSubject:
+                        value === "Outro"
+                          ? prev.customSubject
+                          : ""
+                    }))
+                  }
+                  placeholder="Selecione um assunto"
+                  options={[
+                    "Dúvida",
+                    "Sugestão",
+                    "Correção",
+                    "Parceria",
+                    "Outro"
+                  ]}
                 />
-                {errors.subject && <span>{errors.subject}</span>}
+
+                {errors.subject && (
+                  <span>{errors.subject}</span>
+                )}
+
+                {formData.subject === "Outro" && (
+
+                  <div className="custom-subject">
+
+                    <label style={{ marginTop: '10px' }}>Qual é o assunto?</label>
+
+                    <input
+                      type="text"
+                      name="customSubject"
+                      value={formData.customSubject}
+                      onChange={handleChange}
+                      placeholder="Digite o assunto"
+                    />
+
+                    {errors.customSubject && (
+                      <span>{errors.customSubject}</span>
+                    )}
+
+                  </div>
+
+                )}
+
               </div>
 
               <div>
@@ -215,6 +308,7 @@ function ContactPage() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  placeholder="Descreva sua dúvida, sugestão ou mensagem com o máximo de detalhes possível..."
                   rows={6}
                 />
                 {errors.message && <span>{errors.message}</span>}
@@ -231,6 +325,8 @@ function ContactPage() {
             </form>
           </motion.div>
         </section>
+
+        <FAQ />
 
         <Footer />
 

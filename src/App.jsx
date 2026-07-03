@@ -5,10 +5,12 @@ import ReviewsPage from "./pages/ReviewsPage.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
