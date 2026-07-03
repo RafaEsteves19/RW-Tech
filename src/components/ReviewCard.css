@@ -1,0 +1,74 @@
+.review-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  background: #fff;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  cursor:pointer;
+}
+
+.review-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.review-image {
+  position: relative;
+}
+
+.review-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.category {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: #eee;
+}
+
+.review-content {
+  padding: 15px;
+  color: black;
+}
+
+.review-content h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.rating {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.summary {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+}
+
+/* CATEGORY COLORS */
+.smartphones { background: #0463de; }
+.laptops { background: #850ba7; }
+.accessories { background: #c8ac3e; }
+.headphones { background: #1f9837; }
+.smartwatches { background: #33918a; }
+
+.default { background: #eee; }

@@ -1,0 +1,156 @@
+/* =========================
+   BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f17;
+  color: #e5e7eb;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.min-h-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   HEADER DA PÁGINA
+========================= */
+
+.reviews-header {
+  text-align: center;
+  padding: 48px 0 32px;
+}
+
+.reviews-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.reviews-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* =========================
+   PLACEHOLDERS (SEARCH / FILTER)
+========================= */
+
+.placeholder-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+}
+
+/* =========================
+   GRID DE REVIEWS
+========================= */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 40px 0 80px;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-state button {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  background: transparent;
+  color: #a78bfa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.empty-state button:hover {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+/* =========================
+   SEÇÃO DE PRODUTOS
+========================= */
+
+.products-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 64px;
+  margin-top: 40px;
+}
+
+.products-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   UTILITÁRIOS VISUAIS
+========================= */
+
+.placeholder-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   LUCIDE ICON FIX (opcional)
+========================= */
+
+svg {
+  display: inline-block;
+}

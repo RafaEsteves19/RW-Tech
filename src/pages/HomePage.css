@@ -1,0 +1,196 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* HERO */
+
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+
+/* SECTIONS */
+
+.section {
+  padding: 10px 20px;
+}
+
+
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+
+
+/* CATEGORY GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+
+/* CATEGORY CARD */
+
+.category-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+
+.category-card:hover {
+  transform: translateY(-5px);
+  border-color: #000;
+}
+
+
+
+/* REVIEWS SECTION */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+
+.section-header h2 {
+  margin-bottom: 0;
+}
+
+
+.view-all {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+
+
+/* REVIEW CARDS GRID */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+
+
+/* BUTTON */
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+
+  .grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+
+.category-button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid #ddd;
+
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+
+.category-button:hover {
+  background: rgba(0,0,0,0.05);
+  border-color: #999;
+  transform: translateY(-2px);
+}
