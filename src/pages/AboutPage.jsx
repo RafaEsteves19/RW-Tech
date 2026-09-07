@@ -40,11 +40,11 @@ function AboutPage() {
 
             <Helmet>
 
-                <title translate="no">Sobre - RW Brothers Reviews</title>
+                <title translate="no">Sobre - RW Tech </title>
 
                 <meta translate="no"
                     name="description"
-                    content="Conheça a proposta do RW Brothers Reviews."
+                    content="Conheça a proposta do RW Tech."
                 />
 
             </Helmet>
@@ -62,11 +62,11 @@ function AboutPage() {
                     transition={{ duration: .6 }}
                 >
 
-                    <h1 translate="no">Sobre o RW Brothers Reviews</h1>
+                    <h1 translate="no">Sobre o RW Tech Reviews</h1>
 
                     <p style={{ color: '#9a9999' }}>
 
-                        O <strong translate="no">RW Brothers Reviews</strong> foi criado com um
+                        O <strong translate="no">RW Tech Reviews</strong> foi criado com um
                         objetivo simples: ajudar consumidores a encontrarem os
                         melhores produtos através de análises detalhadas,
                         honestas e imparciais.
@@ -182,7 +182,7 @@ function AboutPage() {
 
                     <p>
 
-                        O <spam translate="no">RW Brothers Reviews</spam> utiliza links de afiliados para
+                        O <spam translate="no">RW Tech Reviews</spam> utiliza links de afiliados para
                         manter o projeto funcionando.
 
                     </p>

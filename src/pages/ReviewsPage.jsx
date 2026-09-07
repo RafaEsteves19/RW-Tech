@@ -9,7 +9,7 @@ import ReviewCard from "../components/ReviewCard.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import CategoryFilter from "../components/CategoryFilter.jsx";
 
-import reviewsData from "../data/reviewsData.js";
+import reviewsData from "../data/index.js";
 import "./ReviewsPage.css";
 
 function ReviewsPage() {

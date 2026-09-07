@@ -8,7 +8,7 @@ import ReviewCard from "../components/ReviewCard.jsx";
 import { ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 
-import reviewsData from "../data/reviewsData.js";
+import reviewsData from "../data/index.js";
 
 function HomePage() {
   const categories = [
@@ -17,7 +17,7 @@ function HomePage() {
     { name: "Laptops" },
     { name: "Acessórios" },
     { name: "Smartwatches" },
-    { name: "Fones" }
+    { name: "Fones de ouvido" }
   ];
 
   // Seleciona as reviews com maiores notas

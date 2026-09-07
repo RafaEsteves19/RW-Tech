@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
-import reviewsData from "../data/reviewsData.js";
+import reviewsData from "../data/index.js";
 
 import "./ProductPage.css";
 

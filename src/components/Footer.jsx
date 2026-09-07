@@ -29,8 +29,8 @@ function Footer() {
         {/* BRAND */}
         <div className="footer-brand">
           <div>
-            <img src={logo} alt="RW Brothers Reviews" className="logo-image" />
-            <h2 translate="no">RW Brothers Reviews</h2>
+            <img src={logo} alt="RW Tech - Reviews de Eletrônicos" className="logo-image" />
+            <h2 translate="no">RW Tech - Reviews de Eletrônicos</h2>
           </div>
           <p>
             Análises técnicas honestas para ajudar na decisão de compra.
@@ -64,7 +64,7 @@ function Footer() {
       {/* BOTTOM */}
       <div className="footer-bottom">
         <p>
-          © {currentYear} <spam translate="no">RW Brothers Reviews.</spam> Todos os direitos reservados.
+          © {currentYear} <spam translate="no">RW Tech.</spam> Todos os direitos reservados.
         </p>
 
         {/*<div className="footer-legal">
