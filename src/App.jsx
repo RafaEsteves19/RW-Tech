@@ -6,6 +6,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
 
         <Route
           path="*"
-          element={<div>404 - Página não encontrada</div>}
+          element={<NotFoundPage />}
         />
       </Routes>
     </Router>
