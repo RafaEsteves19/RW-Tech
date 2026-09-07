@@ -1,0 +1,147 @@
+.not-found-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.not-found-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.not-found-number {
+    font-size: clamp(100px, 20vw, 220px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #2650a3;
+
+    letter-spacing: -8px;
+
+    text-shadow:
+        0 0 30px rgba(37, 99, 235, 0.25);
+}
+
+.not-found-content h1 {
+    margin-top: 20px;
+
+    font-size: clamp(28px, 5vw, 42px);
+
+    font-weight: 700;
+
+    color: #e6e6e6;
+}
+
+.not-found-content p {
+    max-width: 560px;
+
+    margin-top: 14px;
+
+    color: #9ca3af;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+.not-found-actions {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.not-found-back,
+.not-found-home {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.not-found-back {
+    background: rgba(0, 0, 0, 0.2);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #e6e6e6;
+}
+
+.not-found-back:hover {
+    border-color: #2563eb;
+
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.not-found-home {
+    background: #2563eb;
+
+    border: 1px solid #2563eb;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.not-found-home:hover {
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+
+    .not-found-content {
+        padding: 80px 20px;
+    }
+
+    .not-found-number {
+        letter-spacing: -4px;
+    }
+
+    .not-found-actions {
+        width: 100%;
+    }
+
+    .not-found-back,
+    .not-found-home {
+        width: 100%;
+        max-width: 280px;
+    }
+}
